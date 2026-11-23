@@ -1,0 +1,18 @@
+{
+  "random": {
+    "mean": -112.04,
+    "std": 39.29,
+    "farms_cleared": "0/20",
+    "treated_ok": 30,
+    "treated_wasted": 268,
+    "generalization_mean": -111.1
+  },
+  "expert_heuristic": {
+    "mean": 130.75,
+    "std": 24.07,
+    "farms_cleared": "19/20",
+    "treated_ok": 108,
+    "treated_wasted": 0,
+    "generalization_mean": 197.75
+  }
+}

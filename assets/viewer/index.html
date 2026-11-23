@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>AgriScout — Musanze, Rwanda</title>
+  <style>
+    body { margin: 0; overflow: hidden; background: #0b1020; font-family: "Avenir Next", Helvetica, sans-serif; }
+    #hud {
+      position: fixed; top: 16px; left: 16px; color: #fff; background: rgba(10, 18, 32, 0.72);
+      padding: 14px 18px; border-radius: 12px; min-width: 240px; backdrop-filter: blur(6px);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+    #hud h1 { font-size: 15px; margin: 0 0 2px; letter-spacing: 0.4px; }
+    #hud .sub { font-size: 11px; color: #9fb4d0; margin-bottom: 10px; }
+    #hud .row { display: flex; justify-content: space-between; font-size: 12px; margin: 4px 0; }
+    #hud .row b { color: #cfe3ff; font-weight: 600; }
+    #batteryOuter { height: 8px; background: #22304a; border-radius: 4px; margin-top: 3px; }
+    #batteryBar { height: 8px; width: 100%; background: #41d97d; border-radius: 4px; transition: width .2s, background .2s; }
+    #status { position: fixed; bottom: 16px; left: 16px; color: #9fb4d0; font-size: 12px;
+      background: rgba(10,18,32,0.72); padding: 8px 12px; border-radius: 8px; }
+    #legend { position: fixed; top: 16px; right: 16px; color: #dce8f8; font-size: 11px;
+      background: rgba(10,18,32,0.72); padding: 10px 14px; border-radius: 10px; line-height: 1.7; }
+    .dot { display: inline-block; width: 9px; height: 9px; border-radius: 2px; margin-right: 6px; }
+  </style>
+</head>
+<body>
+  <div id="hud">
+    <h1>AgriScout Drone</h1>
+    <div class="sub">Precision agriculture RL &middot; Musanze, Rwanda</div>
+    <div class="row"><span>Battery</span><b id="battery">–</b></div>
+    <div id="batteryOuter"><div id="batteryBar"></div></div>
+    <div class="row"><span>Stressed fields left</span><b id="stressed">–</b></div>
+    <div class="row"><span>Wind</span><b id="wind">–</b></div>
+    <div class="row"><span>Step</span><b id="steps">–</b></div>
+  </div>
+  <div id="legend">
+    <span class="dot" style="background:#35c46a"></span>Healthy field<br/>
+    <span class="dot" style="background:#e2574c"></span>Stressed field (low NDVI)<br/>
+    <span class="dot" style="background:#ffffff; border-radius:50%"></span>Scanned by drone<br/>
+    <span class="dot" style="background:#3b82f6"></span>Charging base
+  </div>
+  <div id="status">connecting to simulation…</div>
+  <script type="importmap">
+    { "imports": { "three": "./vendor/three.module.js", "three/addons/controls/OrbitControls.js": "./vendor/OrbitControls.js" } }
+  </script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
